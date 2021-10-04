@@ -2,18 +2,18 @@ package com.poo;
 
 import com.poo.Entidades.Aluno;
 
-public class Nó {
-    Aluno aluno;
+public class Nó<T> {
+    T valor;
     Nó proximo;
 
-    public Nó(Aluno p)
+    public Nó(T p)
     {
-        this.aluno = p;
+        this.valor = p;
         proximo = null;
     }
 
     public String toString()
     {
-       return aluno.toString();
+       return valor.toString();
     }
 }

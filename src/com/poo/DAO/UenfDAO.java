@@ -3,13 +3,13 @@ package com.poo.DAO;
 import com.poo.Entidades.Aluno;
 import com.poo.Nó;
 
-public interface UenfDAO {
+public interface UenfDAO<P> {
 
-void inserirNoInicio(Aluno p);
+void inserirNoInicio(P p);
 
-void inserirNoFim(Aluno p);
+void inserirNoFim(P p);
 
 void imprimir();
 
-Nó excluir(String nome);
+Nó excluir(P nome);
 }

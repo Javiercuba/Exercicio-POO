@@ -3,79 +3,33 @@ package com.poo;
 import com.poo.DAO.UenfDAO;
 import com.poo.Entidades.Aluno;
 
-public class UENFlist implements UenfDAO {
-    Nó primeiro, ultimo;
-
-    public UENFlist()
-    {
-        primeiro = ultimo = null;
+public class UENFlist<Valor> extends List implements UenfDAO {
+    public UENFlist() {
+        super();
     }
 
-    public boolean vazia()
-    {
-        return primeiro == null;
+    @Override
+    public boolean vazia() {
+        return super.vazia();
     }
 
-    public void inserirNoInicio(Aluno p)
-    {
-        Nó no = new Nó(p);
-        no.proximo = primeiro;
-
-        if(vazia())
-            ultimo = no;
-
-        primeiro = no;
+    @Override
+    public void inserirNoInicio(Object Valor) {
+        super.inserirNoInicio(Valor);
     }
 
-    public void inserirNoFim(Aluno p)
-    {
-        Nó no = new Nó(p);
-
-        if (vazia())
-            primeiro = no;
-        else
-            ultimo.proximo = no;
-
-        ultimo = no;
-
+    @Override
+    public void inserirNoFim(Object Valor) {
+        super.inserirNoFim(Valor);
     }
 
-    public void imprimir()
-    {
-        Nó aux = primeiro;
-
-        while (aux != null)
-        {
-            System.out.println(aux.aluno.getNome());
-            aux = aux.proximo;
-        }
+    @Override
+    public void imprimir() {
+        super.imprimir();
     }
 
-    public Nó excluir(String nome)
-    {
-        Nó aux = primeiro, ant = null;
-
-        while ((aux != null) && (aux.aluno.getNome() != nome)) {
-            ant = aux;
-            aux = aux.proximo;
-        }
-
-        if (aux == null)
-            return null;
-
-        if (aux == primeiro)
-        {
-            if (primeiro == ultimo)
-                ultimo = null;
-            primeiro = aux.proximo;
-        }
-        else if (aux == ultimo)
-        {
-            ant.proximo = null;
-            ultimo = ant;
-        } else{
-            ant.proximo = aux.proximo;
-        }
-        return aux;
+    @Override
+    public Nó excluir(Object Valor) {
+        return super.excluir(Valor);
     }
 }

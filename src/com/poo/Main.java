@@ -1,26 +1,26 @@
 package com.poo;
 
-import com.poo.Entidades.Aluno;
-
 public class Main {
 
     public static void main(String[] args){
 
-		Aluno aluno = new Aluno("Javier",21,80,1.80);
-        Aluno aluno1 = new Aluno("Javi",21,80,1.80);
-        Aluno aluno2 = new Aluno("Jav",21,80,1.80);
-        Aluno aluno3 = new Aluno("J",21,80,1.80);
 
-        UENFlist lista = new UENFlist();
+        UENFlist<Integer> listaInt = new UENFlist();
+        UENFlist<String> listaString = new UENFlist();
 
-        lista.inserirNoInicio(aluno);
-        lista.inserirNoInicio(aluno1);
-        lista.inserirNoInicio(aluno2);
-        lista.inserirNoInicio(aluno3);
-        lista.imprimir();
+        // Lista de inteiros
+        listaInt.inserirNoInicio(2);
+        listaInt.inserirNoInicio(3);
+        listaInt.inserirNoInicio(4);
+        listaInt.inserirNoInicio(70);
+        listaInt.imprimir();
 
-        lista.excluir("Jav");
-        lista.imprimir();
+        // Lista de String
+        listaString.inserirNoInicio("Javier");
+        listaString.inserirNoInicio("Yasmin");
+        listaString.inserirNoInicio("JaYa");
+        listaString.imprimir();
+
 
     }
 }
