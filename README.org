@@ -4,11 +4,119 @@
 
 O Exercicio possui 4 classes importantes:
 
-*** 1. List.c
-Essa é a nossa classe abtrata que é o nosso modelo de lista sendo ja do tipo genericautilizando no começo
+** 1. [[https://github.com/Javiercuba/Exercicio-POO/blob/master/out/production/untitled104/com/poo/List.class][List.class]]
+Essa é a nossa classe abtrata que é o nosso modelo de lista sendo já do tipo generica e implementando os metodos presente na interface =UenfDAO=
 
 #+begin_src java
-int validacao_ano(Data *data)
-abstract class List<T>
+abstract class List<T> implements UenfDAO
 #+end_src java
+
+
+** 2. [[https://github.com/Javiercuba/Exercicio-POO/blob/master/out/production/untitled104/com/poo/List.class][Nó.java]]
+A classe nó é para representar o valor atual com o ponteiro que aponta para o seguinte posição.
+
+#+begin_src java
+public class Nó<T> {
+    T valor;
+    Nó proximo;
+
+    public Nó(T p)
+    {
+        this.valor = p;
+        proximo = null;
+    }
+    public String toString()
+    {
+       return valor.toString();
+    }
+}
+#+end_src java
+
+** 3. [[https://github.com/Javiercuba/Exercicio-POO/blob/master/out/production/untitled104/com/poo/List.class][UenfDAO.java]]
+A interface mostra os metodos mas não possui nenhuma implementação, que faz as implementações é a classe =List=
+
+
+#+begin_src java
+public interface UenfDAO<P> {
+
+void inserirNoInicio(P p);
+
+void inserirNoFim(P p);
+
+void imprimir();
+
+Nó excluir(P nome);
+}
+
+#+end_src java
+
+** 4. [[https://github.com/Javiercuba/Exercicio-POO/blob/master/out/production/untitled104/com/poo/List.class][UENFlist.java]]
+A classe =UENFlist= herda a classe abstrata =List=, assim ele herda todos os metodos da classe pai e pode modifica-los caso seja necessario.
+
+
+#+begin_src java
+public class UENFlist<Valor> extends List{
+    public UENFlist() {
+        super();
+    }
+
+    @Override
+    public boolean vazia() {
+        return super.vazia();
+    }
+
+    @Override
+    public void inserirNoInicio(Object Valor) {
+        super.inserirNoInicio(Valor);
+    }
+
+    @Override
+    public void inserirNoFim(Object Valor) {
+        super.inserirNoFim(Valor);
+    }
+
+    @Override
+    public void imprimir() {
+        super.imprimir();
+    }
+
+    @Override
+    public Nó excluir(Object Valor) {
+        return super.excluir(Valor);
+    }
+}
+#+end_src java
+
+** Main
+
+
+#+begin_src java
+public static void main(String[] args){
+
+
+        UENFlist<Integer> listaInt = new UENFlist();   // Criando uma lista do tipo inteiro
+        UENFlist<String> listaString = new UENFlist(); // Criando uma lista do tipo String
+
+        // Lista de inteiros
+        listaInt.inserirNoInicio(2);
+        listaInt.inserirNoInicio(3);
+        listaInt.inserirNoInicio(4);
+        listaInt.inserirNoInicio(70);
+        listaInt.imprimir(); // Saida: 70 4 3 2 
+
+        // Lista de String
+        listaString.inserirNoInicio("Javier");
+        listaString.inserirNoInicio("Yasmin");
+        listaString.inserirNoInicio("JaYa");
+        listaString.imprimir(); // Saida: JaYa Yasmin Javier 
+
+        listaInt.excluir(4);
+        listaInt.imprimir(); // Saida: 70 3 2 
+    }
+#+end_src java
+
+
+
+
+
 
