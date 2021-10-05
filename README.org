@@ -1,0 +1,14 @@
+#+title: Relatorio POO
+#+author: Javier Ernesto Lopez del real
+#+email: javierernesto2000@gmail.com
+
+O Exercicio possui 4 classes importantes:
+
+*** 1. List.c
+Essa é a nossa classe abtrata que é o nosso modelo de lista sendo ja do tipo genericautilizando no começo
+
+#+begin_src java
+int validacao_ano(Data *data)
+abstract class List<T>
+#+end_src java
+
