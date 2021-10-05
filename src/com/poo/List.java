@@ -49,11 +49,11 @@ abstract class List<T> {
         }
     }
 
-    public Nó excluir(T nome)
+    public Nó excluir(T valor)
     {
         Nó aux = primeiro, ant = null;
 
-        while ((aux != null)) {
+        while ((aux != null) && (aux.valor != valor)) {
             ant = aux;
             aux = aux.proximo;
         }

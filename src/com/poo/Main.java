@@ -21,6 +21,7 @@ public class Main {
         listaString.inserirNoInicio("JaYa");
         listaString.imprimir();
 
-
+        listaInt.excluir(4);
+        listaInt.imprimir();
     }
 }

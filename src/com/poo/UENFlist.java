@@ -1,7 +1,6 @@
 package com.poo;
 
 import com.poo.DAO.UenfDAO;
-import com.poo.Entidades.Aluno;
 
 public class UENFlist<Valor> extends List implements UenfDAO {
     public UENFlist() {

@@ -1,7 +1,5 @@
 package com.poo;
 
-import com.poo.Entidades.Aluno;
-
 public class Nó<T> {
     T valor;
     Nó proximo;
